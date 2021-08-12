@@ -5,7 +5,15 @@ const getData = async url => {
 }
 
 // получаем данные
-getData('list_of_boxes.json')
+getData('src/JSON/list_of_boxes.json')
+  .then(data => {
+      // проверяем
+      console.table(data)
+      
+      // передаем данные функции создания теста
+      createTest(data)
+  })
+  getData('src/JSON/list_of_products.json')
   .then(data => {
       // проверяем
       console.table(data)
