@@ -1,10 +1,15 @@
-"use strict";
+const getData = async url => {
+  const response = await fetch(url)
+  const data = await response.json()
+  return data
+}
 
-(async () => {
-let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
-let response = await fetch(url);
-
-let commits = await response.json(); // читаем ответ в формате JSON
-
-alert(commits[0].author.login);
-})()
+// получаем данные
+getData('list_of_boxes.json')
+  .then(data => {
+      // проверяем
+      console.table(data)
+      
+      // передаем данные функции создания теста
+      createTest(data)
+  })
