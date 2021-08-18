@@ -5,19 +5,11 @@ const getData = async url => {
 }
 
 // получаем данные
-getData('src/JSON/list_of_boxes.json')
-  .then(data => {
+getData('https://script.google.com/macros/s/AKfycbwnuav41ZzVpZhfNhu8jUJgVvMHf2Mm5svbxZ1ByyPBTwFFE2iPRG9mSZPHYjcwMED6GQ/exec')
+  .then( data => {
       // проверяем
-      console.table(data)
-      
-      // передаем данные функции создания теста
-      createTest(data)
+      console.log(data[0])
+    
   })
-  getData('src/JSON/list_of_products.json')
-  .then(data => {
-      // проверяем
-      console.table(data)
-      
-      // передаем данные функции создания теста
-      createTest(data)
-  })
+
+ 
