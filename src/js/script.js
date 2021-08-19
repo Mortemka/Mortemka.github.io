@@ -45,24 +45,25 @@ function select_filling (list_of_products,list_of_boxes) {
       var box_ext_profileSum = [];
 
       for(let j=0; j<box.length; j++){
-        if(box[j].flag == "Да"){
+        if(box[j].flag != "Нет"){
           ext_box[j] = getBox(box[j].ext_id,list_of_boxes);
-        }
-        box_ext_profile[j] = [];
-        box_ext_profileSum[j] = "<br>"+ "Возможно комплектовать в другие коробки:" + "<br>";
-        for(let i=0; i<ext_box[j].length; i++){
-          let number = i+1;
-          box_ext_profile[j][i] = "Габариты " + number + "-й внешней коробки: " + ext_box[j][i].profile + " - " + 
-          "Количество изделий в коробке: " + box[j].quantity.split(";")[i];
-          if(i!=ext_box[j].length-1){        
-            box_ext_profile[j][i] = box_ext_profile[j][i] + "<br>";
+          box_ext_profile[j] = [];
+          box_ext_profileSum[j] = "<br>"+ "Упаковка комплектуется в следующие коробки:" + "<br>";
+          for(let i=0; i<ext_box[j].length; i++){
+            let number = i+1;
+            box_ext_profile[j][i] = "Габариты " + number + "-й коробки: " + ext_box[j][i].profile + " - " + 
+            "Количество упаковок в коробке: " + box[j].quantity.split(";")[i];
+            if(i!=ext_box[j].length-1){        
+              box_ext_profile[j][i] = box_ext_profile[j][i] + "<br>";
+            }
+            box_ext_profileSum[j] = box_ext_profileSum[j] + box_ext_profile[j][i];
           }
-          box_ext_profileSum[j] = box_ext_profileSum[j] + box_ext_profile[j][i];
-        }
+        } else box_ext_profileSum[j] = "";
+
 
         let number = j+1;
-        box_profile[j] = "Габариты " + number + "-й коробки: " + box[j].profile + " - " + 
-        "Количество изделий в коробке: " + product.quantity.split(";")[j] + box_ext_profileSum[j];
+        box_profile[j] = "Габариты " + number + "-й упаковки: " + box[j].profile + " - " + 
+        "Количество изделий в упаковке: " + product.quantity.split(";")[j] + box_ext_profileSum[j];
         if(j!=box.length-1){        
           box_profile[j] = box_profile[j] + "<br>";
         }
