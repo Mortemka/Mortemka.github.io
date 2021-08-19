@@ -51,8 +51,8 @@ function select_filling (list_of_products,list_of_boxes) {
           box_ext_profileSum[j] = "<br>"+ "Упаковка комплектуется в следующие коробки:" + "<br>";
           for(let i=0; i<ext_box[j].length; i++){
             let number = i+1;
-            box_ext_profile[j][i] = "Габариты " + number + "-й коробки: " + ext_box[j][i].profile + " - " + 
-            "Количество упаковок в коробке: " + box[j].quantity.split(";")[i];
+            box_ext_profile[j][i] = "Габариты " + number + "-й коробки: " + ext_box[j][i].profile + " мм" + " - " + 
+            "Количество упаковок в коробке: " + box[j].quantity.split(";")[i] + " шт";
             if(i!=ext_box[j].length-1){        
               box_ext_profile[j][i] = box_ext_profile[j][i] + "<br>";
             }
@@ -62,8 +62,8 @@ function select_filling (list_of_products,list_of_boxes) {
 
 
         let number = j+1;
-        box_profile[j] = "Габариты " + number + "-й упаковки: " + box[j].profile + " - " + 
-        "Количество изделий в упаковке: " + product.quantity.split(";")[j] + box_ext_profileSum[j];
+        box_profile[j] = "Габариты " + number + "-й упаковки: " + box[j].profile + " мм" + " - " + 
+        "Количество изделий в упаковке: " + product.quantity.split(";")[j] + " шт" + box_ext_profileSum[j];
         if(j!=box.length-1){        
           box_profile[j] = box_profile[j] + "<br>";
         }

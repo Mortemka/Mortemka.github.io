@@ -101,21 +101,31 @@ body {
 
 .boxCalculator__box {
   display: none;
+}
+
+.boxCalculator__boxRow {
+ display:flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
 
 }
 
 .boxCalculator__boxProfile {
-  text-align: center;
+  line-height:2.5rem;
   color: #523e2f;
   font-size: 1.5rem;
+  
 }
 
-.boxCalculator__boxQuantity {
-  text-align: center;
-  color: #523e2f;
-  font-size: 1.5rem;
+.boxCalculator__img {
+  flex: 0 0 auto;
 }
 
+.boxCalculator__img img{
+  max-width: 500px;
+}
 
 
 /****************FOOTER*****************/
