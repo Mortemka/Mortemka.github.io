@@ -7,7 +7,7 @@
     <title>Box calculator</title>
     <link rel="stylesheet" href="src/css/reset.css" />
     <link rel="stylesheet" href="src/css/style.css" />
-    <!--<script type="text/javascript" src="server.js"></script> -->
+    <script src="src/js/script.js"></script>
   </head>
 
   <body>
@@ -25,9 +25,14 @@
                 </div>   
                 <div class="boxCalculator__select">
                   <select>
-                    <option value="Лимон">Изделие не выбрано</option>
+                    <option value="not_selected">Изделие не выбрано</option>
                   </select>
                 </div>  
+                <div class="boxCalculator__box">
+                  <div class="boxCalculator__boxProfile"></div>
+                  <div class="boxCalculator__boxQuantity"></div>
+                </div>
+
             </div>
           </div>
         </div>
@@ -42,6 +47,6 @@
     <!--<script type="text/javascript" src="src/JSON/list_of_boxes.json"></script>
     <script type="text/javascript" src="src/JSON/list_of_products.json"></script> 
     -->
-    <script src="src/js/script.js"></script>
+    
   </body>
 </html>

@@ -66,6 +66,7 @@ body {
   max-width: 40rem;
   position: relative;
   margin: auto;
+  margin-bottom: 40px;
 
 }
 
@@ -80,7 +81,7 @@ body {
   -moz-appearance: none;/* Firefox */
   appearance: none;/* убираем дефолнтные стрелочки */
   font-family: inherit;/* наследует от родителя */
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #444;
 }
 
@@ -93,14 +94,27 @@ body {
   pointer-events: none;
   position: absolute;
   top: 50%;
-  right: 1rem;
+  right: 1.5rem;
   z-index: 1;
   margin-top: -3px;
 }
 
+.boxCalculator__box {
+  display: none;
 
+}
 
+.boxCalculator__boxProfile {
+  text-align: center;
+  color: #523e2f;
+  font-size: 1.5rem;
+}
 
+.boxCalculator__boxQuantity {
+  text-align: center;
+  color: #523e2f;
+  font-size: 1.5rem;
+}
 
 
 
